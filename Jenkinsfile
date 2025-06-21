@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout'){
             steps{
                 //Checkout the source repo from scm
-                git 'https://github.com/github-simplilearn-net/MavenBuild.git'
+                git 'https://github.com/abhijithvg/MavenBuild.git'
             }
         }
         stage('Build'){
