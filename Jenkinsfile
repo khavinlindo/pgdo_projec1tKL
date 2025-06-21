@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout'){
             steps{
                 //Checkout the source repo from scm
-                git 'https://github.com/khavinlindo/pgdo_projec1tKL.git'
+                git 'https://github.com/github-simplilearn-net/MavenBuild.git'
             }
         }
         stage('Build'){
@@ -25,6 +25,12 @@ pipeline {
                 sh 'mvn test'
             }
         }
+       stage ('Deploy the code'){
+           steps{
+               deploy adapters: [tomcat9(credentialsId: 'tomcat-id', path: '', url: 'http://localhost:9090/')], contextPath: null, war: '**/*.war'
+           }
+       }
+        
     }
     post{
         success{
