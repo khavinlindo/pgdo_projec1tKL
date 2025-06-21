@@ -3,7 +3,7 @@ pipeline {
     
     tools {
         //To specify the maven to use
-        maven "mvn3.9.8"
+        maven "mvn3.9.9"
     }
     
     stages {
